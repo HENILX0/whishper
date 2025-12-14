@@ -4,7 +4,7 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 # Whisper model load (smallest & fastest)
-model = whisper.load_model("tiny")
+model = whisper.load_model("tiny", device="cpu")
 
 @app.route("/stt", methods=["POST"])
 def stt():
